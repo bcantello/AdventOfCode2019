@@ -1,6 +1,6 @@
 package com.brandoncantello;
 
-import com.brandoncantello.problem1.FuelCalculator;
+import com.brandoncantello.adventProblem1.FuelCalculator;
 
 public class Main
 {
@@ -10,6 +10,6 @@ public class Main
          * Run Solution to Problem 1:
          */
         FuelCalculator fuelCalculator = new FuelCalculator();
-        System.out.println("Solution 1: " + fuelCalculator.calculator());
+        System.out.println("Solution 1: " + fuelCalculator.moduleFuelCalculator());
     }
 }

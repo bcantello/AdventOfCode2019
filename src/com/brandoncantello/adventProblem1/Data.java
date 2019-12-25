@@ -1,11 +1,11 @@
-package com.brandoncantello.problem1;
+package com.brandoncantello.adventProblem1;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Data
 {
-    List<Integer> moduleWeights = Arrays.asList(66690,
+    final List<Integer> moduleWeights = Arrays.asList(66690,
             86239,
             75191,
             140364,
