@@ -4,32 +4,30 @@ import java.util.List;
 
 public class FuelCalculator
 {
-    private final Data data = new Data();
+    private final ModuleData moduleData = new ModuleData();
     private int fuelRequired = 0;
 
     public int moduleFuelCalculator()
     {
-        List moduleWeights = data.moduleWeights;
+        List moduleWeights = moduleData.moduleWeights;
 
         for (Object moduleWeight : moduleWeights)
         {
             int tempFuel = ((int) moduleWeight / 3) - 2;
-            int additionalFuel = 0;
-            int tempAdditionalFuelMass = tempFuel;
-            while (tempAdditionalFuelMass > 0)
+            fuelRequired += tempFuel;
+            while (tempFuel > 0)
             {
-                int tempAdditionalFuel = (tempAdditionalFuelMass / 3) - 2;
+                int tempAdditionalFuel = (tempFuel / 3) - 2;
                 if (tempAdditionalFuel >= 0)
                 {
-                    additionalFuel += tempAdditionalFuel;
-                    tempAdditionalFuelMass = tempAdditionalFuel;
+                    fuelRequired += tempAdditionalFuel;
+                    tempFuel = tempAdditionalFuel;
                 }
                 else
                 {
                     break;
                 }
             }
-            fuelRequired += (tempFuel + additionalFuel);
         }
         return fuelRequired;
     }
